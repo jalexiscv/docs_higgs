@@ -1,24 +1,25 @@
+```plaintext
 ######################
-Higgs User Guide
+Guía del Usuario de Higgs
 ######################
 
 ******************
-Setup Instructions
+Instrucciones de Configuración
 ******************
 
-The Higgs user guide uses Sphinx to manage the documentation and
-output it to various formats. Pages are written in human-readable
-`ReStructured Text <https://en.wikipedia.org/wiki/ReStructuredText>`_ format.
+La guía del usuario de Higgs utiliza Sphinx para gestionar la documentación y
+generarla en varios formatos. Las páginas están escritas en formato
+`ReStructured Text <https://es.wikipedia.org/wiki/ReStructuredText>`_ legible por humanos.
 
-Prerequisites
-=============
+Requisitos Previos
+==================
 
 Python
 ------
 
-Sphinx requires Python 3.5+, which may already be installed if you are running
-OS X or Linux. You can confirm in a Terminal window by executing ``python``
-or ``python3``.
+Sphinx requiere Python 3.5+, que puede estar ya instalado si estás usando
+OS X o Linux. Puedes confirmarlo en una ventana de Terminal ejecutando ``python``
+o ``python3``.
 
 .. code-block:: bash
 
@@ -28,23 +29,23 @@ or ``python3``.
     python3 --version
     Python 3.6.9
 
-    # For Windows using the Python Launcher
+    # Para Windows usando el Python Launcher
     py -3 --version
     Python 3.8.1
 
-If you're not on 3.5+, go ahead and install the latest 3.x version from
-`Python.org <https://www.python.org/downloads/>`_. Linux users should use their
-operating systems' built-in Package Managers to update.
+Si no tienes la versión 3.5+, adelante e instala la última versión 3.x desde
+`Python.org <https://www.python.org/downloads/>`_. Los usuarios de Linux deben usar los
+gestores de paquetes integrados de sus sistemas operativos para actualizar.
 
 pip
 ---
 
-Now that you have Python 3.x up and running, we will be installing
-`pip <https://pip.pypa.io/en/stable/>`_ (The Python Package Installer).
+Ahora que tienes Python 3.x en funcionamiento, instalaremos
+`pip <https://pip.pypa.io/en/stable/>`_ (El Instalador de Paquetes de Python).
 
-You can check if you have pip installed with ``pip`` or ``pip3``.
-As you can see pip follow the same naming convention as Python.
-Please take note that it should say ``python 3.x`` at the very end.
+Puedes comprobar si tienes pip instalado con ``pip`` o ``pip3``.
+Como puedes ver, pip sigue la misma convención de nombres que Python.
+Ten en cuenta que debería decir ``python 3.x`` al final.
 
 .. code-block:: bash
 
@@ -54,28 +55,28 @@ Please take note that it should say ``python 3.x`` at the very end.
     pip3 --version
     pip 9.0.1 from /usr/lib/python3/dist-packages (python 3.6)
 
-    # For Windows using the Python Launcher
+    # Para Windows usando el Python Launcher
     py -3 -m pip --version
     pip 20.0.2 from C:\Users\<username>\AppData\Local\Programs\Python\Python38\lib\site-packages\pip (python 3.8)
 
 Linux
 ^^^^^
 
-`Installing pip/setuptools/wheel with Linux Package Managers
+`Instalando pip/setuptools/wheel con Gestores de Paquetes de Linux
 <https://packaging.python.org/guides/installing-using-linux-tools/>`_
 
-Others
-^^^^^^
+Otros
+^^^^^
 
-pip is already installed if you are using Python 3.5+ downloaded from
+pip ya está instalado si estás usando Python 3.5+ descargado desde
 `Python.org <https://www.python.org/downloads/>`_.
 
-Installation
-============
+Instalación
+===========
 
-Now we need to install Sphinx and it's dependencies. Choose ``pip`` or ``pip3``
-depending on operative system. After this step you need to restart your Terminal
-window as Python won't find all applications we just installed otherwise.
+Ahora necesitamos instalar Sphinx y sus dependencias. Elige ``pip`` o ``pip3``
+dependiendo del sistema operativo. Después de este paso, necesitas reiniciar tu ventana de Terminal
+ya que Python no encontrará todas las aplicaciones que acabamos de instalar de otra manera.
 
 .. code-block:: bash
 
@@ -83,45 +84,46 @@ window as Python won't find all applications we just installed otherwise.
 
     pip3 install -r user_guide_src/requirements.txt
 
-    # For Windows using the Python Launcher
+    # Para Windows usando el Python Launcher
     py -3 -m pip install -r user_guide_src/requirements.txt
 
-It's time to wrap things up and generate the documentation.
+Es hora de terminar y generar la documentación.
 
 .. code-block:: bash
 
     cd user_guide_src
     make html
 
-Editing and Creating Documentation
-==================================
+Editando y Creando Documentación
+================================
 
-All of the source files exist under *source/* and is where you will add new
-documentation or modify existing documentation. Just as with code changes,
-we recommend working from feature branches and making pull requests to
-the *develop* branch of this repo.
+Todos los archivos fuente existen bajo *source/* y es donde agregarás nueva
+documentación o modificarás la documentación existente. Al igual que con los cambios de código,
+recomendamos trabajar desde ramas de características y hacer pull requests a
+la rama *develop* de este repositorio.
 
-So where's the HTML?
-====================
+Entonces, ¿dónde está el HTML?
+==============================
 
-Obviously, the HTML documentation is what we care most about, as it is the
-primary documentation that our users encounter. Since revisions to the built
-files are not of value, they are not under source control. This also allows
-you to regenerate as necessary if you want to "preview" your work. Generating
-the HTML is very simple. From the root directory of your user guide repo
-fork issue the command you used at the end of the installation instructions::
+Obviamente, la documentación HTML es lo que más nos importa, ya que es la
+documentación principal que encuentran nuestros usuarios. Dado que las revisiones de los archivos generados
+no tienen valor, no están bajo control de versiones. Esto también te permite
+regenerar según sea necesario si deseas "previsualizar" tu trabajo. Generar
+el HTML es muy simple. Desde el directorio raíz de tu repositorio de la guía del usuario
+emite el comando que usaste al final de las instrucciones de instalación::
 
     make html
 
-You will see it do a whiz-bang compilation, at which point the fully rendered
-user guide and images will be in *build/html/*. After the HTML has been built,
-each successive build will only rebuild files that have changed, saving
-considerable time. If for any reason you want to "reset" your build files,
-simply delete the *build* folder's contents and rebuild.
+Verás que hace una compilación rápida, en cuyo punto la guía del usuario completamente renderizada
+y las imágenes estarán en *build/html/*. Después de que se haya construido el HTML,
+cada compilación sucesiva solo reconstruirá los archivos que hayan cambiado, ahorrando
+considerable tiempo. Si por alguna razón deseas "reiniciar" tus archivos de compilación,
+simplemente elimina el contenido de la carpeta *build* y vuelve a compilar.
 
 ***************
-Style Guideline
+Guía de Estilo
 ***************
 
-Please refer to /contributing/documentation.rst for general guidelines for
-using Sphinx to document Higgs.
+Por favor, consulta /contributing/documentation.rst para obtener pautas generales sobre
+el uso de Sphinx para documentar Higgs.
+```
