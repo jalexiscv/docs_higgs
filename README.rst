@@ -1,4 +1,3 @@
-```plaintext
 ######################
 Guía del Usuario de Higgs
 ######################
