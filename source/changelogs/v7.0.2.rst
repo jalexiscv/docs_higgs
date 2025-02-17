@@ -1,0 +1,38 @@
+#############
+Versión 7.0.2
+#############
+
+Fecha de lanzamiento: 24 de febrero de 2024
+
+**7.0.2 liberación de Higgs(AI)**
+
+.. contents::
+    :local:
+    :depth: 3
+
+
+ROTURA
+******
+
+Hora::createFromTimestamp()
+===========================
+
+Un error que causó :ref:`Time::createFromTimestamp()<time-createfromtimestamp>`
+Se ha solucionado el problema de devolver una instancia de hora con una zona horaria UTC.
+
+A partir de esta versión, cuando no especifica una zona horaria, se crea una instancia de hora.
+con la zona horaria de la aplicación se devuelve de forma predeterminada.
+
+
+Errores corregidos
+******************
+
+- **Sesión:** Se corrigió un error en el controlador de sesión de Redis que causaba que fallara el bloqueo.
+  y los datos de la sesión que se borrarán.
+- **DB Forge:** Se corrigió un error en SQLite3 Forge que causaba ``Forge::modifyColumn()``
+  modificar incorrectamente las definiciones de las tablas.
+- **CSP:** Se corrigió un error por el cual CSP bloqueaba algunos elementos en la barra de herramientas de depuración.
+
+Ver los repositorios
+`CAMBIOLOG.md<https://github.com/Higgs(AI)/Higgs(AI)/blob/develop/CHANGELOG.md>` _
+para obtener una lista completa de errores corregidos.
